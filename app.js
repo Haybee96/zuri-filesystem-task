@@ -7,8 +7,8 @@ async function getPosts() {
     // Fetch results
     const results = await axios.get('http://jsonplaceholder.typicode.com/posts');
 
-    // Convert to JSON
-    const posts = JSON.stringify(results.data, null, 2)
+    // Convert (format) to JSON
+    const posts = JSON.stringify(results.data, null, 2);
 
     // Write to file
     fs.writeFile(`${__dirname}/result/posts.json`, posts, err => {
@@ -19,6 +19,3 @@ async function getPosts() {
 
 // Call the function
 getPosts();
-
-
-
